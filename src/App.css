@@ -136,7 +136,7 @@ nav a:hover {
 }
 
 .nav-social {
-  width: 30px;
+  width: 31px;
   filter: invert(96%) sepia(100%) saturate(1%) hue-rotate(16deg) brightness(110%) contrast(101%);
   padding: 0 10px 0 10px;
 }
