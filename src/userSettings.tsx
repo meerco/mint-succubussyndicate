@@ -56,12 +56,12 @@ export const welcomeSettings: WelcomeSettings = {
 
   // Countdown Timer
   countdownEnable: false,
-  countdownTo: date("2 Jan 2022 00:00:00 GMT"),
+  countdownTo: date("12 Mar 2022 22:45:00 GMT"),
   //Example date below
   // date('29 2021 00:00:00 GMT')
 
   // showprice
-  showPrice: false,
+  showPrice: true,
 
   //Enable Custom HTML
   enableCustomHTML: false,
@@ -97,7 +97,7 @@ export class MintWelcomeCustomHTML extends React.Component {
 
 export const whitelistSettings: WhitelistSettings = {
   //If you want to use the whitelist feature enable it.
-  enabled: true,
+  enabled: false,
 
   startDate: date("1 Jan 2022 00:00:00 GMT"),
   endDate: date("8 Jan 2022 00:00:00 GMT"),
