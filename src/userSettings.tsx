@@ -73,10 +73,10 @@ export class MintWelcomeCustomHTML extends React.Component {
       <div className="custom-mint-container">
         {/* Add Custom HTML code for Welcome Here! */}
 
-        
+
         <p>Test 1</p>
-        
-        
+
+
         {/* End */}
       </div>
     );
@@ -120,10 +120,10 @@ export class MintWhitelistCustomHTML extends React.Component {
       <div className="custom-mint-container">
         {/* Add Custom HTML code for Whitelist Stage Here! */}
 
-        
+
         <p>Test 2</p>
-        
-        
+
+
         {/* End */}
       </div>
     );
@@ -138,7 +138,7 @@ export class MintWhitelistCustomHTML extends React.Component {
 export const publicSaleSettings: PublicSaleSettings = {
   //start date and end date must match your Candy Machine Config for public launch!
 
-  startDate: date("7 Jan 2022 00:00:00 GMT"),
+  startDate: date("12 Mar 2022 22:45:00 GMT"),
   endDate: undefined,
   countdown: false,
   //Example date below
@@ -158,10 +158,10 @@ export class MintPublicSaleCustomHTML extends React.Component {
       <div className="custom-mint-container">
         {/* Add Custom HTML code for Public Minting Here! */}
 
-        
+
         <p>Test 3</p>
-        
-        
+
+
         {/* End */}
       </div>
     );

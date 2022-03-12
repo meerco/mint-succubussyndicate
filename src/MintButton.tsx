@@ -6,7 +6,7 @@ import { CircularProgress } from '@material-ui/core';
 import { GatewayStatus, useGateway } from '@civic/solana-gateway-react';
 import { useEffect, useState } from 'react';
 import { whitelistSettings, publicSaleSettings, mintPanic } from './userSettings';
-import { toDate }  from './utils'
+import { toDate } from './utils'
 
 
 export const CTAButton = styled(Button)`
@@ -24,16 +24,16 @@ export const CTAButton = styled(Button)`
 export const MintButton = ({
   onMint,
   candyMachine,
-  
+
   isMinting,
-  
-  
+
+
 }: {
   onMint: () => Promise<void>;
   candyMachine: CandyMachineAccount | undefined;
-  
+
   isMinting: boolean;
- 
+
 }) => {
   const { requestGatewayToken, gatewayStatus } = useGateway();
   const [clicked, setClicked] = useState(false);
@@ -43,34 +43,34 @@ export const MintButton = ({
   const publicMintEnd = toDate(publicSaleSettings.endDate)?.getTime();
 
   function whiteListSaleCheck() {
-    if (whitelistSettings.enabled && (whitelistStartDate && whitelistEndDate ) && Date.now() > whitelistStartDate && Date.now() < whitelistEndDate) {
-      
+    if (whitelistSettings.enabled && (whitelistStartDate && whitelistEndDate) && Date.now() > whitelistStartDate && Date.now() < whitelistEndDate) {
+
       return true
     } else {
-      
+
       return false
     }
   }
-  
+
   let WhitelistMintActive = whiteListSaleCheck()
   console.log('is Whitelist Sale Active? ' + whiteListSaleCheck())
 
   function publicSaleCheck() {
 
-    if (publicMintStart && publicMintEnd){
-      if(Date.now() > publicMintStart && Date.now() < publicMintEnd){
+    if (publicMintStart && publicMintEnd) {
+      if (Date.now() > publicMintStart && Date.now() < publicMintEnd) {
         return true
       } else {
         return false
       }
     }
     else if (publicMintStart) {
-      if (Date.now() > publicMintStart){
+      if (Date.now() > publicMintStart) {
         return true
       } else {
         return false
       }
-    
+
     }
 
 
@@ -78,9 +78,9 @@ export const MintButton = ({
 
   let PublicMintActive = publicSaleCheck()
 
-  console.log('is public sale live? '+ publicSaleCheck())
-  
-  console.log(candyMachine?.state.isSoldOut, isMinting, (WhitelistMintActive || PublicMintActive) ,!candyMachine?.state.isActive)
+  console.log('is public sale live? ' + publicSaleCheck())
+
+  console.log(candyMachine?.state.isSoldOut, isMinting, (WhitelistMintActive || PublicMintActive), !candyMachine?.state.isActive)
 
   useEffect(() => {
     if (gatewayStatus === GatewayStatus.ACTIVE && clicked) {
@@ -97,7 +97,7 @@ export const MintButton = ({
         isMinting ||
         mintPanic.enabled ||
         !(WhitelistMintActive || PublicMintActive)
-        
+
 
       }
       onClick={async () => {
@@ -109,7 +109,7 @@ export const MintButton = ({
             setClicked(true);
           } else {
             console.log('requeting token')
-             let token = await requestGatewayToken();
+            let token = await requestGatewayToken();
             console.log(token);
           }
         } else {
@@ -120,18 +120,18 @@ export const MintButton = ({
       variant="contained"
     >
       <div className='mint-button-text'>
-      {candyMachine?.state.isSoldOut ? (
-        'SOLD OUT'
-      ) : isMinting ? (
-        <CircularProgress />
-      
-      ) : mintPanic.enabled ? (
+        {candyMachine?.state.isSoldOut ? (
+          'SOLD OUT'
+        ) : isMinting ? (
+          <CircularProgress />
 
-        'Mint Paused'
+        ) : mintPanic.enabled ? (
 
-      ) :  (
-        'MINT'
-      )}
+          'Mint Paused'
+
+        ) : (
+          'MINT'
+        )}
       </div>
     </CTAButton>
   );

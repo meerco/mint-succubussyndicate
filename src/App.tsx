@@ -2,7 +2,7 @@ import "./App.css";
 import { useMemo } from "react";
 
 import Minter from "./Minter";
-
+import { CrossmintPayButton } from "@crossmint/client-sdk-react-ui";
 import * as anchor from "@project-serum/anchor";
 import { clusterApiUrl } from "@solana/web3.js";
 import { WalletAdapterNetwork } from "@solana/wallet-adapter-base";
@@ -91,10 +91,10 @@ const App = () => {
           </li>
           <li>
             <div className="social-icons">
-              <a href="https://twitter.com" target="_blank" rel="noreferrer">
+              <a href="https://twitter.com/succubussynnft" target="_blank" rel="noreferrer">
                 <img className="nav-social" src="/icons/twitter.svg" alt="" />
               </a>
-              <a href="https://discord.com" target="_blank" rel="noreferrer">
+              <a href="https://discord.com/invite/succubussyndicate" target="_blank" rel="noreferrer">
                 <img className="nav-social" src="/icons/discord.svg" alt="" />
               </a>
             </div>
@@ -106,24 +106,15 @@ const App = () => {
       </div>
       <nav>
         <div className="nav-container">
-          <img className="nav-logo" src="/img/logo.png" alt="" />
-          <a className="hide-800" href="/#link1">
-            Link 1
-          </a>
-          <a className="hide-800" href="/#link2">
-            Link 2
-          </a>
-          <a className="hide-800" href="/#link3">
-            Link 3
-          </a>
-          <a className="hide-800" href="/#link4">
-            Link 4
+          <img className="nav-logo" src="/img/logo_text.png" alt="" />
+          <a id="siteLink" className="hide-800" href="https://www.succubussyndicate.com/">
+            succubussyndicate.com
           </a>
           <div className="social-icons hide-800">
-            <a href="https://twitter.com" target="_blank" rel="noreferrer">
+            <a href="https://twitter.com/succubussynnft" target="_blank" rel="noreferrer">
               <img className="nav-social" src="/icons/twitter.svg" alt="" />
             </a>
-            <a href="https://discord.com" target="_blank" rel="noreferrer">
+            <a href="https://discord.com/invite/succubussyndicate" target="_blank" rel="noreferrer">
               <img className="nav-social" src="/icons/discord.svg" alt="" />
             </a>
           </div>
@@ -133,14 +124,9 @@ const App = () => {
         <header className="card" id="link1">
           <div style={{ padding: "0 24px 0 24px 0" }}>
             <h3 className="text-secondary-color">Welcome To</h3>
-            <h1 className="pb-3">The Boiler Plate</h1>
+            <h1 className="pb-3">Succubus Syndicate</h1>
             <p className="text-secondary-color">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
-              scelerisque ipsum non est porta mollis. Donec sapien sapien,
-              dictum eget enim sed, hendrerit semper orci. Donec ante magna,
-              consequat at eros ac, eleifend dictum sem. Nam vitae condimentum
-              lorem. Vestibulum molestie dui turpis, tincidunt porta sem congue
-              nec.
+              Succubus Syndicate consists of 3,333 succubus NFTs ranked by level of rarity, randomly generated from over 100 unique traits. Each succubus NFT comes with exclusive benefits, including virtual, digital and physical perks.
             </p>
           </div>
           <div>
@@ -159,64 +145,20 @@ const App = () => {
                 </WalletProvider>
               </ConnectionProvider>
             </ThemeProvider>
+
+            <div className="btnCard">
+              <CrossmintPayButton
+                collectionTitle="Succubus Syndicate"
+                collectionDescription="3,333 Succubus NFTs on the Solana blockchain. Each NFT acts as an all-access pass into the Succubus Syndicate NSFW ecosystem."
+                clientId="7a48cb6b-0660-4848-9c1b-f6a3a690df4d"
+                className="crossButton"
+              />
+            </div>
+
+
           </div>
         </header>
 
-        <div id="link2" className="container">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac velit
-          aliquet, semper sapien sed, ornare augue. Phasellus sed velit
-          interdum, sagittis metus quis, facilisis lectus. Cras sollicitudin
-          purus at magna eleifend maximus. Nulla nec nulla in nunc maximus
-          viverra in at mauris. Fusce sodales dolor nisi, et vehicula orci porta
-          id. In placerat nunc sed erat lacinia tincidunt. Interdum et malesuada
-          fames ac ante ipsum primis in faucibus. Vestibulum commodo eget metus
-          vitae tempus. Aliquam pharetra mi at efficitur accumsan. Curabitur
-          venenatis libero a ex porttitor, at auctor turpis hendrerit. Nam
-          commodo, risus non consequat pretium, erat ante auctor purus, a cursus
-          dolor erat at velit. Maecenas dignissim, dolor sed laoreet aliquam,
-          tortor lacus faucibus urna, eget mattis massa sem ac dui. Nam semper
-          hendrerit interdum. Etiam at dictum nisi.
-        </div>
-
-        <div id="link3" className="container card">
-          <h1 className="pb-3">Lorem ipsum</h1>
-        </div>
-
-        <div id="link4" className="container faq">
-          <h1 style={{ padding: "0 0 24px 0" }}>FAQ</h1>
-          <div>
-            <h4>Lorem ipsum?</h4>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              Suspendisse id metus id mauris tincidunt posuere. Vivamus neque
-              odio, imperdiet vitae.
-            </p>
-
-            <hr />
-          </div>
-
-          <div>
-            <h4>Lorem ipsum?</h4>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              Suspendisse id metus id mauris tincidunt posuere. Vivamus neque
-              odio, imperdiet vitae.
-            </p>
-
-            <hr />
-          </div>
-
-          <div>
-            <h4>Lorem ipsum?</h4>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              Suspendisse id metus id mauris tincidunt posuere. Vivamus neque
-              odio, imperdiet vitae.
-            </p>
-
-            <hr />
-          </div>
-        </div>
       </div>
     </div>
   );
